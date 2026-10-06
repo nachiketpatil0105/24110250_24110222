@@ -23,7 +23,7 @@ int main()
     std::cout << x << " * " << y << " = " << multiply(x, y) << std::endl;
     std::cout << x << " / " << y << " = " << divide(x, y) << std::endl;
 
-    int k = 6 / 0;
+    int k = 8 / 0;
     
     return 0;
 }
