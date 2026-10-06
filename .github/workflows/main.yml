@@ -1,0 +1,26 @@
+name: C++ Build
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install C++ build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++ make
+
+      - name: Build project
+        run: make clean && make
+
+      - name: Run program
+        run: ./main
